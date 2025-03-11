@@ -15,8 +15,7 @@ public class Main {
         
         Map<String, Pokemon> pokemonMap = PokemonMapFactory.createMap(option);
         
-        // Aquí se leería el archivo CSV y se llenaría el mapa con los Pokémon (esto debe implementarse)
-        // Por ahora, agregamos Pokémon de prueba
+        // Agregamos Pokémon de prueba
         pokemonMap.put("Pikachu", new Pokemon("Pikachu", "Electric", null, 35, 55, 40, 50, 50, false, Arrays.asList("Static", "Lightning Rod")));
         pokemonMap.put("Charizard", new Pokemon("Charizard", "Fire", "Flying", 78, 84, 78, 109, 85, false, Arrays.asList("Blaze", "Solar Power")));
         
