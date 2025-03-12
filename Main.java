@@ -20,9 +20,9 @@ public class Main {
 
         Map<String, Pokemon> pokemonMap = PokemonMapFactory.createMap(option);
 
-        // Agregamos Pokémon de prueba
-        pokemonMap.put("Pikachu", new Pokemon("Pikachu", "Electric", null, 35, 55, 40, 50, 50, false, Arrays.asList("Static", "Lightning Rod")));
-        pokemonMap.put("Charizard", new Pokemon("Charizard", "Fire", "Flying", 78, 84, 78, 109, 85, false, Arrays.asList("Blaze", "Solar Power")));
+        // Agregamos Pokémon de prueba (corregido)
+        pokemonMap.put("Pikachu", new Pokemon("Pikachu", "Electric", null, 35, 55, 40, 50, false, Arrays.asList("Static", "Lightning Rod")));
+        pokemonMap.put("Charizard", new Pokemon("Charizard", "Fire", "Flying", 78, 84, 78, 109, false, Arrays.asList("Blaze", "Solar Power")));
 
         PokemonManager manager = new PokemonManager(pokemonMap);
 
