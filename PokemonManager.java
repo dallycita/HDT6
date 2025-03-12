@@ -32,7 +32,7 @@ public class PokemonManager {
     }
 
     public void showUserCollectionOrderedByType() {
-        Collections.sort(userCollection, Comparator.comparing(Pokemon::getType1));
+        userCollection.sort(Comparator.comparing(Pokemon::getType1).thenComparing(Pokemon::getName));
         for (Pokemon pokemon : userCollection) {
             System.out.println(pokemon.getName() + " - " + pokemon.getType1());
         }
@@ -40,7 +40,7 @@ public class PokemonManager {
 
     public void showAllPokemonOrderedByType() {
         List<Pokemon> allPokemon = new ArrayList<>(pokemonMap.values());
-        Collections.sort(allPokemon, Comparator.comparing(Pokemon::getType1));
+        allPokemon.sort(Comparator.comparing(Pokemon::getType1).thenComparing(Pokemon::getName));
         for (Pokemon pokemon : allPokemon) {
             System.out.println(pokemon.getName() + " - " + pokemon.getType1());
         }
@@ -49,7 +49,7 @@ public class PokemonManager {
     public void showPokemonByAbility(String ability) {
         boolean found = false;
         for (Pokemon pokemon : pokemonMap.values()) {
-            if (pokemon.getAbilities().contains(ability)) {
+            if (pokemon.getAbilities().stream().anyMatch(a -> a.equalsIgnoreCase(ability))) {
                 System.out.println(pokemon.getName());
                 found = true;
             }
@@ -59,3 +59,4 @@ public class PokemonManager {
         }
     }
 }
+
