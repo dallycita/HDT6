@@ -4,7 +4,6 @@ public class Pokemon {
     private String name;
     private String type1;
     private String type2;
-    private int total;
     private int hp;
     private int attack;
     private int defense;
@@ -12,12 +11,11 @@ public class Pokemon {
     private boolean legendary;
     private List<String> abilities;
 
-    public Pokemon(String name, String type1, String type2, int total, int hp, int attack, int defense,
+    public Pokemon(String name, String type1, String type2, int hp, int attack, int defense,
                    int speed, boolean legendary, List<String> abilities) {
         this.name = name;
         this.type1 = type1;
         this.type2 = type2;
-        this.total = total;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -34,6 +32,10 @@ public class Pokemon {
         return type1;
     }
 
+    public List<String> getAbilities() {
+        return abilities;
+    }
+
     public String getAbilitiesAsString() {
         return String.join(", ", abilities);
     }
@@ -46,3 +48,4 @@ public class Pokemon {
                " | Habilidades: " + getAbilitiesAsString();
     }
 }
+
